@@ -1,0 +1,10 @@
+D:\git Code\SQL\关系数据库标准语言\bin\Debug\关系数据库标准语言.dacpac
+D:\git Code\SQL\关系数据库标准语言\bin\Debug\关系数据库标准语言.dll
+D:\git Code\SQL\关系数据库标准语言\bin\Debug\关系数据库标准语言.pdb
+D:\git Code\SQL\关系数据库标准语言\obj\Debug\关系数据库标准语言.sqlprojAssemblyReference.cache
+D:\git Code\SQL\关系数据库标准语言\obj\Debug\Model.xml
+D:\git Code\SQL\关系数据库标准语言\obj\Debug\refactor.xml
+D:\git Code\SQL\关系数据库标准语言\obj\Debug\postdeploy.sql
+D:\git Code\SQL\关系数据库标准语言\obj\Debug\predeploy.sql
+D:\git Code\SQL\关系数据库标准语言\obj\Debug\关系数据库标准语言.dll
+D:\git Code\SQL\关系数据库标准语言\obj\Debug\关系数据库标准语言.pdb
