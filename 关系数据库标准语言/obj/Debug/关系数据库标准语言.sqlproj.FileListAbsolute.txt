@@ -1,6 +1,0 @@
-D:\git Code\SQL\关系数据库标准语言\bin\Debug\关系数据库标准语言.dacpac
-D:\git Code\SQL\关系数据库标准语言\bin\Debug\关系数据库标准语言.dll
-D:\git Code\SQL\关系数据库标准语言\bin\Debug\关系数据库标准语言.pdb
-D:\git Code\SQL\关系数据库标准语言\obj\Debug\关系数据库标准语言.sqlprojAssemblyReference.cache
-D:\git Code\SQL\关系数据库标准语言\obj\Debug\关系数据库标准语言.dll
-D:\git Code\SQL\关系数据库标准语言\obj\Debug\关系数据库标准语言.pdb

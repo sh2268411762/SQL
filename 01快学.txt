@@ -1,0 +1,84 @@
+CREATE TABLE user_tmp3
+(
+id int(11),
+name varchar(128),
+age int(11),
+PRIMARY KEY(id,name)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE father
+(
+id int primary key,
+name varchar(100)
+);
+
+CREATE TABLE son
+(
+id int primary key,
+name varchar(100),
+age int,
+c_id int,
+constraint p_c_id foreign key(c_id) REFERENCES father(id)
+);
+
+CREATE TABLE user_tmp4
+(
+id int,
+name varchar(20) NOT NULL
+);
+
+CREATE TABLE user_tmp5
+(
+id int UNIQUE,
+name VARCHAR(100)
+);
+
+CREATE TABLE user_tmp6
+(
+id int,
+name VARCHAR(100) DEFAULT "newUser"
+);
+
+INSERT INTO user_tmp6 set id = 1
+INSERT INTO user_tmp6 set id = 2
+SELECT * FROM user_tmp6;
+
+CREATE TABLE user_tmp7
+(
+id int PRIMARY Key auto_increment,
+name varchar(100)
+);
+
+SHOW TABLES;
+
+SHOW CREATE TABLE user_tmp7;
+
+DESC user_tmp7;
+
+ALTER TABLE user_tmp7 RENAME user_temp7;
+SHOW TABLES;
+
+RENAME TABLE user_temp7 to user_tmp7;
+SHOW TABLES;
+
+ALTER TABLE user_tmp7 MODIFY name VARCHAR(200);
+DESC user_tmp7;
+
+
+ALTER TABLE user_tmp7 CHANGE name new_name VARCHAR(300);
+ALTER TABLE user_tmp7 CHANGE new_name name VARCHAR(300);
+ALTER TABLE user_tmp7 ADD age int not NULL DEFAULT 0;
+ALTER TABLE user_tmp7 DROP age;
+ALTER TABLE user_tmp7 MODIFY age int first;
+ALTER TABLE user_tmp7 MODIFY age int AFTER id;
+
+ALTER TABLE son DROP FOREIGN KEY p_c_id;
+DESC son;
+
+
+-- 查看当前数据库支持哪些引擎
+SHOW ENGINES;
+DROP TABLE user_tmp4,user_tmp5,user_tmp6;
+SHOW TABLES;
+
