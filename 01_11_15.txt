@@ -1,0 +1,30 @@
+show TABLES;
+show create table user_tmp7;
+DESC user_tmp7;
+
+-- 创建一个新表来进行数据库语句学习
+CREATE TABLE test1
+(
+id int PRIMARY KEY auto_increment,
+name varchar(100) DEFAULT "000",
+age int DEFAULT 0,
+phone_num varchar(20) DEFAULT "0"
+);
+
+DESC test1;
+INSERT INTO test1(name,age,phone_num)VALUES("张三",21,12345678900),("李四",20,10987654321);
+SELECT * FROM test1;
+select name,age from test1 WHERE age >= 20;
+UPDATE test1 set age = 22 WHERE id = 1;
+UPDATE test1 set phone_num = 33333333333 WHERE id = 3 OR id = 4;
+DELETE FROM test1 WHERE age < 20;
+
+REPLACE into test1 (id,name,age,phone_num)VALUES(1,"小红",20,99999999999),(3,"张三",21,33333333333),(5,"王五",22,44444444444);
+SELECT * FROM test1;
+
+SHOW CHARACTER SET;
+SHOW COLLATION;
+SHOW VARIABLES LIKE 'character%';
+SHOW VARIABLES LIKE 'collation%';
+
+
