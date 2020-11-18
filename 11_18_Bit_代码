@@ -1,0 +1,85 @@
+比特点名表
+CREATE TABLE if not exists BitDianMing
+(
+name varchar(20),
+school varchar(50),
+major varchar(20),
+sex bit,
+dianming bit,
+state varchar(3)
+);
+
+
+
+学生表
+DROP TABLE IF EXISTS student;
+CREATE TABLE student
+(
+id INT primary key auto_increment,
+sn INT comment '学号',
+name VARCHAR(20) comment '姓名',
+qq_mail VARCHAR(20) comment '邮箱'
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+插入两条数据，value_list 数量必须和定义表的列的数量以及顺序一致
+INSERT INTO student values(3,3,"悟空","2268411762");
+
+
+-- 考试成绩表
+DROP TABLE IF EXISTS exam_ret;
+CREATE TABLE exam_ret
+(
+id INT primary key auto_increment,
+name varchar(20),
+chinese DECIMAL(3,1),
+math DECIMAL(3,1),
+english DECIMAL(3,1)
+);
+
+INSERT INTO exam_ret (name,chinese,math,english) values
+("唐僧",78.8,66.7,56.7),
+("吉胜军",78.8,66.7,56.7),
+("田喜壮",88.8,76.7,56.7),
+("杨新安",98.8,86.7,56.7),
+("屎西饼",68.8,96.7,56.7),
+("罗太菌",59.8,59.9,56.7),
+("李建亭",78.8,66.7,56.7),
+("冯菊义",58.8,56.7,56.9)
+
+
+创建商品表
+DROP TABLE IF EXISTS goods;
+CREATE TABLE goods
+(
+goods_id INT,
+goods_name VARCHAR(20),
+unitprice DECIMAL(5,2),
+catgory VARCHAR(20),
+provider VARCHAR(20)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+创建客户表
+DROP TABLE IF EXISTS customer;
+CREATE TABLE customer
+(
+customer_id INT,
+name VARCHAR(20),
+address VARCHAR(100),
+email VARCHAR(20),
+sex bit,
+card_id varchar(20)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+创建购买表
+DROP TABLE IF EXISTS purchase;
+CREATE TABLE purchase
+(
+order_id INT,
+customer_id INT,
+goods_id INT,
+nums INT
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+

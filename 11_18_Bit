@@ -1,0 +1,81 @@
+数据库操作：
+（1）查询，显示：
+	SHOW DATABASES;
+（2）创建数据库：
+	数据库不存在会直接创建，但数据库存在会报错：
+		CREATE DATABASE 数据库名称 CHARACTER SET utf8mb4;
+	数据库不存在会直接创建，存在时会返回一个警告：
+		CREATE DATABASE [IF NOT EXISTS]数据库名称 CHARACTER SET utf8mb4;
+		查看返回的警告：
+			SHOW WARNINGS;
+（3）删除数据库：
+	直接删除（不存在则报错）：
+		DROP DATABASE 数据库名称;
+	存在则直接删除（不存在会返回一个警告，不会报错）：
+		DROP DATABASE IF EXISTS 数据库名称;
+（4）使用数据库：
+	USE 数据库名称;
+		
+
+数据类型：
+（1）数值型
+（2）字符串类型
+（3）时间类型
+
+
+数据表操作（先使用 USE 命令进入数据库）：
+（1）查看表：
+	查看数据库中所有的表：
+		SHOW TABLES;
+			-- Empty set -->表示该数据库下没有表
+	查看指定表：
+		DESC 表名
+		mysql> desc user;
+		+----------+-------------+--------------+---------+---------+-------+
+		| Field    | Type        | Null 		| Key     | Default | Extra |
+		+----------+-------------+--------------+---------+---------+-------+
+		| id       | int(11)     | YES  		|         | NULL    |       |
+		| name     | varchar(20) | YES  		|         | NULL    |       |
+		| password | char(32)    | YES  		|         | NULL    |       |
+		| birthday | date        | YES  		|         | NULL    |       |
+		+----------+-------------+--------------+---------+---------+-------+
+		字段名称     字段类型      是否允许为空   索引类型   默认值    扩充
+	查看表结构：
+		SHOW CREATE TABLE 表名;
+（2）创建表：
+	CREATE [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+	(
+	列名1 数据类型  [约束条件]  [默认值],
+	列名2 数据类型  [约束条件]  [默认值],
+	列名3 数据类型  [约束条件]  [默认值],
+	...
+	列名n 数据类型  [约束条件]  [默认值]
+	)[表的约束条件];
+	-- 最后一个不可以有逗号否则会报错
+	comment 可用于增加字段说明
+	如：name varchar(20) comment '姓名';
+（3）删除表：
+	存在则删除，不存在则返回一个警告：
+		DROP TABLE [IF EXISTS] 表名;
+		
+		
+数据表（增删查改-->CRUD）
+（1）插入-->新增数据
+	INSERT INTO 表名 VALUES(数据1，数据2，...);
+	INSERT INTO 表名 (字段1，字段2，...) VALUES (数据1，数据2，...);
+	INSERT INTO 表名 (字段1，字段2，...) VALUES (数据1，数据2，...),(数据1，数据2，...),(数据1，数据2，...);
+（2）查询：
+	查询全部列
+	select * from 表名;
+	查询指定列
+	select 字段1，字段2，... from 表名;
+	查询字段为表达式
+		-- 表达式不包含字段：
+		select 字段1，字段2，常量（10） FROM 表名;
+		-- 表达式包含一个字段
+		select 字段1，字段2，字段3+常量（10） FROM 表名;
+		-- 表达式包含多个字段
+		select 字段1，字段2，字段3+字段4 FROM 表名;
+	别名
+	SELECT colum [As] alias_name + [...] FROM 表名;
+		
